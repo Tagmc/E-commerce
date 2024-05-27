@@ -16,7 +16,7 @@ const { users } = require('../utils/constant');
 //   }
 //   const token = makeToken();
 //   res.cookie('dataregister', {...req.body, token}, {  maxAge: 5 * 60 * 1000 });
-//   const html = `Please Click on link below to verify your account.<a href ='${process.env.URL_SERVER}/api/user/final-register/${token}'>Click Here</a>`;
+//   const html = `Please Click on link below to verify your account.<a href ='https://e-commerce-vert-beta.vercel.app/api/user/final-register/${token}'>Click Here</a>`;
 //   await sendMail({email, html, subject: 'Complete register!'})
 //   const user = await User.findOne({ email: email });
 //   if (user) {
