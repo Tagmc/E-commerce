@@ -55,10 +55,10 @@ module.exports.register = asyncHandler(async (req, res) => {
 module.exports.finalRegister = asyncHandler(async (req, res) => {
   const cookie = req.cookies;
   const { token } = req.params;
-  // if (!cookie || cookie?.dataregister?.token !== token) {
-  //   res.clearCookie('dataregister');
-  //   return res.redirect(`${process.env.CLIENT_URL}/final-register/fail`);
-  // }
+  if (!cookie || cookie?.dataregister?.token !== token) {
+    res.clearCookie('dataregister');
+    return res.redirect(`${process.env.CLIENT_URL}/final-register/fail`);
+  }
   const newUser = await User.create({
     email: cookie?.dataregister?.email,
     password: cookie?.dataregister?.password,
@@ -68,7 +68,7 @@ module.exports.finalRegister = asyncHandler(async (req, res) => {
   });
   res.clearCookie('dataregister');
   if (newUser) return res.redirect(`${process.env.CLIENT_URL}/final-register/success`);
-  else return res.redirect(`${process.env.CLIENT_URL}/final-register/success`);
+  else return res.redirect(`${process.env.CLIENT_URL}/final-register/fail`);
   // return res.status(200).json({
   //   success: newUser ? true : false,
   //   mes: newUser ? 'Register is successful. Please go login' : "Something went wrong"
