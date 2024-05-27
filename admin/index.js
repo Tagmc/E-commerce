@@ -8,7 +8,7 @@ const cors = require('cors');
 
 //["https://ecommerce-nqh.vercel.app"]
 app.use(cors({
-  origin: ["https://ecommerce-nqh-check.vercel.app"],
+  origin: ["https://ecommerce-nqh.vercel.app"],
   method: ['POST', 'GET', 'PUT', 'DELETE'],
   credentials: true
 }))
