@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --font-family: "Poppins", sans-serif;
+}
+html,  body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+*{
+  font-family: var(--font-family);
+}
+@media (min-width: 992px) {
+  .a {
+      width: 32.5%;
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.icon {
+  animation: slideTop 0.7s ease forwards;
+}
+
+@keyframes scale-down-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes rotate-in-center {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+}
+.scale-down-center {
+	-webkit-animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-down-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.modal {
+  animation: rotate-in-center 0.7s;
+}
+.p-carousel-container {
+  position: relative;
+}
+.p-carousel-prev.p-link {
+  position: absolute;
+  top: 43%;
+  left: 0;
+
+}
+.p-carousel-next.p-link {
+  position: absolute;
+  top: 43%;
+  right: 0;
+}
+.p-inputnumber-buttons-horizontal .p-inputnumber-input {
+  width: 50px;
+  text-align: center;
+}
+.t{
+  box-sizing: border-box;
+}
