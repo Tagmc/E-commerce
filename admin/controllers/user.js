@@ -67,13 +67,12 @@ module.exports.finalRegister = asyncHandler(async (req, res) => {
     lastname: cookie?.dataregister?.lastname,
   });
   res.clearCookie('dataregister');
-  // if (newUser) 
-  return res.redirect(`${process.env.CLIENT_URL}/final-register/success`);
-  // else return res.redirect(`${process.env.CLIENT_URL}/final-register/fail`);
-  // return res.status(200).json({
-  //   success: newUser ? true : false,
-  //   mes: newUser ? 'Register is successful. Please go login' : "Something went wrong"
-  // })
+  if (newUser) return res.redirect(`${process.env.CLIENT_URL}/final-register/success`);
+  else return res.redirect(`${process.env.CLIENT_URL}/final-register/fail`);
+  return res.status(200).json({
+    success: newUser ? true : false,
+    mes: newUser ? 'Register is successful. Please go login' : "Something went wrong"
+  })
 });
 
 
